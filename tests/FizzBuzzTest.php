@@ -9,9 +9,10 @@
 
 namespace Kata\FizzBuzz\Test;
 
+use Kata\Test\BaseTestCase;
 use Kata\FizzBuzz\FizzBuzz;
 
-class FizzBuzzTest extends \PHPUnit_Framework_TestCase
+class FizzBuzzTest extends BaseTestCase
 {
 
     /**
@@ -102,23 +103,5 @@ class FizzBuzzTest extends \PHPUnit_Framework_TestCase
     {
         $fizzbuzz = new FizzBuzz();
         $this->assertEquals($fizzbuzz->show(15), '1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz');
-    }
-
-
-    /**
-     * Call protected/private method of a class.
-     *
-     * @param object &$object    Instantiated object that we will run method on.
-     * @param string $methodName Method name to call
-     * @param array  $parameters Array of parameters to pass into method.
-     *
-     * @return mixed Method return.
-     */
-    public function invokeMethod(&$object, $methodName, array $parameters = array())
-    {
-        $reflection = new \ReflectionClass(get_class($object));
-        $method = $reflection->getMethod($methodName);
-        $method->setAccessible(true);
-        return $method->invokeArgs($object, $parameters);
     }
 }

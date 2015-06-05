@@ -9,9 +9,10 @@
 
 namespace Kata\Arabic2Roman\Test;
 
+use Kata\Test\BaseTestCase;
 use Kata\Arabic2Roman\Arabic2Roman;
 
-class Arabic2RomanTest extends \PHPUnit_Framework_TestCase
+class Arabic2RomanTest extends BaseTestCase
 {
     /**
      * @test
